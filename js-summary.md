@@ -223,7 +223,7 @@ We've changed luigisDebt by subtracting 35.
    
 ```
 The output is:
-`Value of x is: 10`
+`Value of x : 10`
 
 
 # Return Values
