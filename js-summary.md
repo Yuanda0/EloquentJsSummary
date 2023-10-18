@@ -201,12 +201,29 @@ We've changed luigisDebt by subtracting 35.
 
 - Words with a special meaning, such as `let, const, var`, are keywords, and they may not be used as binding names.
 
-- The full list of keywords: 
-``break case catch class const continue debugger default
-delete do else enum export extends false finally for
-function if implements import interface in instanceof let
-new package private protected public return static super
-switch this throw true try typeof var void while with yield
-
-
 # Functions
+
+- A lot of the values provided in the default environment have the type function. A function is a piece of program wrapped in a value. Such values can be applied in order to run the wrapped program. For example, in a browser environment, the binding `prompt` holds a function that shows a little dialog box asking for user input. It is used like this:
+
+```javascript
+   prompt("How old are you")
+```
+
+![Javatpoint](https://www.javascripttutorial.net/wp-content/uploads/2020/01/javascript-prompt.png)
+
+
+
++ Executing a function is called invoking, calling, or applying it. You can call a function by putting parentheses after an expression that produces a function value. Usually you’ll directly use the name of the binding that holds the function. The values between the parentheses are given to the program inside the function. In the example, the prompt function uses the string that we give it as the text to show in the dialog box. Values given to functions are called arguments. Different functions might need a different number or different types of arguments.
+
+# The console.log function
+
+```javascript
+   let x = 10;
+   console.log("Value of x is: ", x); //This function got args. The args are: first argument is "Value of x is: " -> string, second argument is x -> number
+   
+```
+The output is:
+`Value of x is: 10`
+
+
+# Return Values
