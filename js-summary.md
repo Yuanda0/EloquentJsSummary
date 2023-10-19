@@ -287,3 +287,82 @@ Conditional execution is created with the `if` keyword in JavaScript.
    if (1 + 1 == 2) console.log("The answer is true!");
 ```
 
+
+
+- You often won’t just have code that executes when a condition holds true, but also code that handles the other case. This alternate path is represented by the second arrow in the diagram. You can use the ``else`` keyword, together with ``if``, to create two separate, alternative execution paths.
+
+
+```javascript
+
+   let theNumber = Number(prompt("Pick a number"));
+   if (!Number.isNaN(theNumber)) {
+      console.log("Your number is the square root of " +
+                 theNumber * theNumber);
+   } else { // If theNumber isn't a number:
+      console.log("Hey. Why didn't you give me a number?");
+   }
+```
+
+##### If you have more than two paths to choose from, you can “chain” multiple if/else pairs together. Here’s an example:
+
+```javascript
+   let num = Number(prompt("Pick a number"));
+   if (num < 10) {
+      console.log("Small!);
+   } else if (num < 100) {
+      console.log("Medium.");
+   } else {
+      console.log("Large");
+   }
+```
+
+> The program will first check whether **num** is less than 10.If it is chooses that branch, shows **Small**, and is done. If it isn’t, it takes the **else** branch, which itself contains a second **if**. If the second condition **(< 100)** holds, that means the number is at least 10 but below 100, and **"Medium"** is shown. If it doesn’t, the second and last **else** branch is chosen.
+
+
+# While and Do Loops
+
+- We use while loops because:
+Insted of that:
+```javascript
+   console.log(0);
+   console.log(2);
+   console.log(4);
+   console.log(6);
+   console.log(8);
+   console.log(10);
+   console.log(12);
+```
+
+```javascript
+   let number = 0;
+   while (number <= 12) {
+      console.log(number);
+      number = number + 2;
+   }
+``` 
+This code block does
+First ve defined a variable as number and value of that is 0, and there is a keyword `while` and it takes a condition in the paranthesis.The condition in this block is `number <= 12` which means this code going to work until number greater than 12.
+When `number` greater than 12 program ends. This is the output of this code:
+
+**0**
+**2**
+**4**
+**6**
+**8**
+**10**
+**12**
+
+
+- A do loop is a control structure similar to a while loop. It differs only on one point: a do loop always executes its body at least once, and it starts testing whether it should stop only after that first execution. To reflect this, the test appears after the body of the loop.
+
+```javascript
+   let yourName;
+   do {
+      yourName = prompt("Who are you?");
+   } while (!yourName);
+   console.log(yourName);
+```
+- This program will force you to enter a name. It will ask again and again until it gets something that is not an empty string. Applying the ! operator will convert a value to Boolean type before negating it, and all strings except "" convert to true. This means the loop continues going round until you provide a non-empty name.      
+
+
+# Indenting Code
