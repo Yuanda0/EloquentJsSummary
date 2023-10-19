@@ -249,5 +249,41 @@ The output is:
 
 # Control Flow
 
-- When your program contains <span style="font-weight: 700;">more than one</span> statement, the statements are executed as if they are a story, from top to bottom.
+- When your program contains <span style="font-weight: 700; color: black;">more than one</span> statement, the statements are executed as if they are a story, from top to bottom.
+
+```javascript
+
+   let theNumber = Number(prompt("Pick a number"));
+   console.log("Your number is the square root of " +
+              theNumber * theNumber);
+```
+> The function Number converts a value to a number. We need that conversion because the result of prompt is a string value.
+
+
+# Conditional Execution
+
+- Not all programs are straight roads. We may, for example, want to create a branching road, where the program takes the proper branch based on the situation at hand. This is called _conditional execution_.
+
+Conditional execution is created with the `if` keyword in JavaScript.
+
+```javascript
+
+   let theNumber = Number(prompt("Pick a number"));
+   if (!Number.isNaN(theNumber)) {
+      console.log("Your number is the square root of " +
+                  theNumber * theNumber);
+   }
+```
+
+- In this condition we check **theNumber** is a number or isn&apos;t a number,if it is a number we calling **console.log** function.
+
+- The ``Number.isNaN`` function is a standard JavaScript function that returns ``true`` only if the argument it is given is ``NaN``. The ``Number`` function happens to return ``NaN`` when you give it a string that doesn’t represent a valid number. Thus, the condition translates to “unless ``theNumber`` is not-a-number, do this”.
+
+
++ If we have a single statement we dont have to use **{}** braces. For example:
+
+```javascript
+
+   if (1 + 1 == 2) console.log("The answer is true!");
+```
 
