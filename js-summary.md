@@ -227,3 +227,27 @@ The output is:
 
 
 # Return Values
+
+- Showing a dialog box or writing text to the screen is a side effect.
+**For example, the function Math.max takes any amount of number arguments and gives back the greatest.**
+
+```javascript
+   console.log(Math.max(2, 4));
+```
+
+`Returns -> 4`
+
+- When a function produces a value, it is said to return that value.
+
++ Anything that produces a value is an expression in JavaScript, which means function calls can be used within larger expressions. Here a call to Math.min, which is the opposite of `Math.max`, is used as part of a plus expression:
+
+```javascript
+
+   console.log(Math.min(2, 4) + 100);
+```
+`Returns -> 102`
+
+# Control Flow
+
+- When your program contains <span style="font-weight: 700;">more than one</span> statement, the statements are executed as if they are a story, from top to bottom.
+
