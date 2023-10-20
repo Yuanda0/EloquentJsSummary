@@ -365,4 +365,106 @@ When `number` greater than 12 program ends. This is the output of this code:
 - This program will force you to enter a name. It will ask again and again until it gets something that is not an empty string. Applying the ! operator will convert a value to Boolean type before negating it, and all strings except "" convert to true. This means the loop continues going round until you provide a non-empty name.      
 
 
-# Indenting Code
+# For Loops
+```javascript
+   for (let number = 0; number <= 12; number = number + 2) {
+      console.log("Number");
+   }
+```
+This code block does same thing with `while` in our previous example. So this code blocks output is same.
+
+**0**
+**2**
+**4**
+**6**
+**8**
+**10**
+**12**
+
+
+The parentheses ``after`` a for keyword must contain two semicolons. The part before the first semicolon initializes the loop, usually by defining a binding. The second part is the expression that checks whether the loop must continue. The final part updates the state of the loop after every iteration. In most cases, this is shorter and clearer than a ``while`` construct.
+
+
+- This is the code that computes 210 using ``for`` instead of ``while``:
+
+```javascript
+
+   let result = 1;
+   for (let counter = 0; counter < 10; counter++) {
+      result = result * 2;
+   }
+   console.log(result);
+```
+
+Output: `1024`
+
+- This time, we've used a different syntax: 'counter++,' which is essentially an increment operation. This means it increases our counter by +1 in every loop.
+
+
+# Breaking Out of a Loop
+
+- Having the looping condition produce ``false`` is not the only way a loop can finish. There is a special statement called ``break`` that has the effect of immediately jumping out of the enclosing loop.
+
+This program illustrates the `break` statement. It finds the first number that is both greater than or equal to 20 and divisible by 7.
+
+```javascript
+
+   for (let current = 20; current = current + 1;) {
+      if (current % 7 == 0) {
+         console.log(current);
+         break;
+      }
+   }
+```
+
+>Using the remainder (%) operator is an easy way to test whether a number is divisible by another number. If it is, the remainder of their division is zero.
+
+- Instead of that `for (let i = 0; i < 10; i = i + 1)` we can do:
+`for (let i = 0; i < 10; i = i++)` -> if we want just increase by +1 we can use `i++` but if we want increase by +2, +3 etc. we can do this too: `i += 2` its like:
+
+```javascript
+
+   for (let i = 0; i <= 20; i += 5) {
+      console.log(i);
+   }
+```
+- In every loop our `i` increases by +5 and we print that. So output seems like that:
+**0**
+**5**
+**10**
+**15**
+**20**
+
+
+# Dispatching on a value with switch
+
+- It is not uncommon for code to look like this:
+
+```javascript
+
+   if (x == "value1") action1();
+   else if (x == "value2") action2();
+   else if (x == "value3") action3();
+   else defaultAction();
+```
+
+There is a construct called ``switch`` that is intended to express such a “dispatch” in a more direct way. Unfortunately, the syntax JavaScript uses for this (which it inherited from the C/Java line of programming languages) is somewhat awkward—a chain of ``if`` statements may look better. Here is an example:
+
+```javascript
+   switch (prompt("What is the weather like?")) {
+   case "rainy":
+      console.log("Remember to bring an umbrella.");
+      break;
+   case "sunny":
+      console.log("Dress lightly.");
+   case "cloudy":
+      console.log("Go outside.");
+      break;
+   default:
+      console.log("Unknown weather type!");
+      break;
+}
+```
+
+
+# CHAPTER 3
