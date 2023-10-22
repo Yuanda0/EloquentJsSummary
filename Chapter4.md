@@ -186,3 +186,129 @@ console.log(tableFor("pizza", JOURNAL));
    // → 1
 
 ```
+
+- Another fundamental array method is slice, which takes start and end indices and returns an array that has only the elements between them. The start index is inclusive, the end index exclusive.
+
+```javascript
+
+   console.log([0, 1, 2, 3, 4].slice(2, 4));
+   // -> [2, 3]
+   console.log([0, 1, 2, 3, 4].slice(2));
+   // -> [2, 3, 4]
+   console.log([0, 1, 2, 3, 4].slice(-2));
+   // -> [3, 4]
+```
+
+- The concat method can be used to glue arrays together to create a new array, similar to what the + operator does for strings.
+
+
+```javascript
+
+   function remove(array, index) {
+      return array.slice(0, index)
+         .concat(array.slice(index + 1));
+   }
+
+   console.log(remove(["a", "b", "c", "d", "e"]), 2);
+   // -> ["a", "b", "d", "e"]
+```
+
+# Strings and Their Properties
+
+-We can read properties like length and toUpperCase from string values. But if you try to add a new property, it doesn’t stick.
+
+```javascript
+
+   let kim = "Kim";
+   kim.age = 88;
+   console.log(kim.age);
+   // -> undefined
+```
+
+> Values of type string, number, and Boolean are not objects, and though the language doesn’t complain if you try to set new properties on them, it doesn’t actually store those properties. As mentioned earlier, such values are immutable and cannot be changed.
+
+- But these types do have built-in properties. Every string value has a number of methods. Some very useful ones are slice and indexOf, which resemble the array methods of the same name.
+
+```javascript
+
+   console.log("coconuts".slice(4, 7));
+   // -> "nut"
+
+   console.log("coconuts".indexOf("u"));
+   // -> 5
+```
+- One difference is that a string’s indexOf can search for a string containing more than one character, whereas the corresponding array method looks only for a single element.
+
+```javascript
+
+   console.log("one two three".indexOf("ee"));
+   // -> 11
+```
+
+- The trim method removes whitespace (spaces, newlines, tabs, and similar characters) from the start and end of a string.
+
+```javascript
+
+   console.log("     okay /n  ".trim());
+   // -> okay
+
+```
+- It is called padStart and takes the desired length and padding character as arguments.
+
+```javascript
+
+   console.log(String(4).padStart(4, "2"));
+   // -> 22224
+```
+
+- A string can be repeated with the repeat method, which creates a new string containing multiple copies of the original string, glued together.
+
+```javascript
+
+   console.log("HELLO, ".repeat(3));
+   // -> HELLO, HELLO, HELLO, 
+```
+
+
+# Rest Parameters
+
+- It can be useful for a function to accept any number of arguments. For example, Math.max computes the maximum of all the arguments it is given.
+
+- To write such a function, you put three dots before the function’s last parameter, like this:
+
+```javascript
+
+   function max(...numbers) {
+      let result = -Infinity;
+      for (let number of numbers) {
+         if (number > result) result = number;
+      }
+      return result;
+   }
+   console.log(max(4, 1, 9, -2));
+   // → 9
+   // You can use a similar three-dot notation to call a function with an array of arguments.
+
+   let numbers = [5, 1, 7];
+   console.log(max(...numbers));
+   // -> 7
+```
+
+# Destructuring
+
+```javascript
+
+   let {name} = {name: "Yuanda", age: 16};
+   console.log(name);
+   // -> Yuanda
+```
+- Another example:
+```javascript
+   const myArr = [{name: "yuanda", age: 16}, {name: "Emir", age: 16}];
+
+   for (let i = 0; i < myArr.length; i++) {
+      let {name} = myArr[i];
+      console.log(name);
+      // -> yuanda, Emir
+} 
+```
