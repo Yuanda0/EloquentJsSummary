@@ -149,7 +149,36 @@ The parameters to *reduce* are, apart from the array, a combining function and a
 
    let biggest = null;
    for (let script of SCRIPTS) {
-      if (biggest == null || 
-      characterCount)
+   if (biggest == null ||
+      characterCount(biggest) < characterCount(script)) {
+      biggest = script;
    }
+   }
+   console.log(biggest);
+   // → {name: "Han", …}
+```
+
+- There are a few more bindings, and the program is four lines longer. But it is still very readable.
+
+- Higher-order functions start to shine when you need to compose operations. As an example, let’s write code that finds the average year of origin for living and dead scripts in the data set.
+
+```javascript
+   function average(array) {
+      return array.reduce((a, b) => a + b) / array.length;
+   }
+
+   console.log(Math.round(average(
+   SCRIPTS.filter(s => s.living).map(s => s.year))));
+   // → 1165
+   console.log(Math.round(average(
+   SCRIPTS.filter(s => !s.living).map(s => s.year))));
+   // → 204
+```
+
+### Exercise:
+
+```javascript
+   let arrays = [[1,2,3], [4,5], [6]];
+   let flattenedArray = arrays.reduce((acc, curr) => acc.concat(curr), []);
+   // -> [1, 2, 3, 4, 5, 6]
 ```
